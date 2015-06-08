@@ -17,7 +17,8 @@ header{
 nav{
     height:25px; width:100vw;/*高さ25px　幅画面いっぱい*/
     background-color: white;
-    position:fixed;/*画面上で固定  */    
+    position:fixed;/*画面上で固定  */
+    z-index: 3;
     top:0px;left:0px;/* 画面左端 */
 }/*メニューバーの設定*/
 nav a.aaa {
@@ -144,6 +145,7 @@ input{
 }
 #mo a>p{
     position:absolute;
+    z-index: 1;
     top:-120px;
     left:25px;
     color:red;
@@ -154,6 +156,7 @@ input{
     display:block;
     
 }
+
 /* ------------------------------ドア----------------------------*/
 #move{
     position: absolute;
