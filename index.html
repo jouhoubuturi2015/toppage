@@ -1,278 +1,91 @@
 <!DOCTYPE html>
 <html lang = "ja">
-<html>
 	<head>
 		<meta  charset = "UTF-8">
 		<title>2015年度情報物理研究室</title>
-                <link rel="shortcut icon" href="images/profile/favi.gif">
+        <link rel="shortcut icon" href="images/profile/favi.gif">
+        <link rel="stylesheet" href="base.css">
 
     <script>
     
-    
-    
-    
-     var inko=["matsubara","misawa","nishi","nizato","okada","sone","toyota"];    
-  var img = new Image();    //画像オブジェクト作成
-  img.src = "images/skin/wanted.png";  //写真のパスを指定する
+    var inko=["matsubara","misawa","nishi","nizato","okada","sone","toyota"];    
+    var img = new Image();    //画像オブジェクト作成
+    img.src = "images/skin/wanted.png";  //写真のパスを指定する
 
-
-member=[];
-for(var jb=0;jb<inko.length;jb++){
-member[jb]= new Image();  
-member[jb].src=("images/profile/"+inko[jb]+".jpg");
-    
-}
+    member=[];
+    for(var jb=0;jb<inko.length;jb++){
+    member[jb]= new Image();  
+    member[jb].src=("images/profile/"+inko[jb]+".jpg");
+    }
  
-/*----------------------------------ドa-----------------*/
-var m1=0;
-function test(m){
-	//alert("01");
-var move = document.getElementById("move");    
-  
-m1=m1+3;
-move.style.transform= "skewY("+m1+"deg)";
-move.style.left= m1*10+"px";
-move.style.top= m1*-10+"px";
-if(m1>80){
-    move.style.display="none";
-    clearInterval(g);
+/*----------------------------------ドア-----------------*/
+    var m1=0;
+    function test(m){
+        //alert("01");
+    var move = document.getElementById("move");    
 
+    m1=m1+3;
+    move.style.transform= "skewY("+m1+"deg)";
+    move.style.left= m1*10+"px";
+    move.style.top= m1*-10+"px";
+    if(m1>80){
+        move.style.display="none";
+        clearInterval(g);
 
-}
-}
-function move(){
-var move = document.getElementById("move");
-//alert("1");
-				var url = "images/door.mp3";	//urlにサウンドファイルの場所を入れる
-				audioObj = new Audio(url);		//audioObjにaudio要素を入れる
-				audioObj.play();			//音の再生
-g=setInterval("test(move)",100);//1234ミリ秒に一回aaと言う関数を実行する
+        }
+    }
+        
+    function move(){
+        var move = document.getElementById("move");
+        //alert("1");
+        var url = "images/door.mp3";	//urlにサウンドファイルの場所を入れる
+        audioObj = new Audio(url);		//audioObjにaudio要素を入れる
+        audioObj.play();			//音の再生
+        g=setInterval("test(move)",100);//1234ミリ秒に一回aaと言う関数を実行する
 
-}
-/*----------------------------------ドa-----------------*/
+    }
+/*----------------------------------ドア-----------------*/
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     </script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style/scrollpath.css" /> 
-        <script type="text/javascript">
-        $(function(){
-            $('a[href^=#]').click(function(){
-                var speed = 800;
-                var href= $(this).attr("href");
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                var position = target.offset().top;
-                $("html, body").animate({scrollTop:position}, speed, "swing");
-                return false;
-            });
+        
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>//jquery読み込み
+        
+    <link rel="stylesheet" type="text/css" href="style/scrollpath.css" />
+        
+    <script type="text/javascript">
+    $(function(){
+        $('a[href^=#]').click(function(){
+            var speed = 800;
+            var href= $(this).attr("href");
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            var position = target.offset().top;
+            $("html, body").animate({scrollTop:position}, speed, "swing");
+            return false;
         });
-        </script>
+    });
+    </script>
 
-		<style type="text/css">
-/*---------------------------↓基本設定↓------------------------------*/
-body{background-color:#ffffff;}
+		
 
-@font-face{
-    font-family:衡山毛筆フォント行書;
-    src: url('font.ttf');
-}/* 新しいフォントの作成 */
-header{
-	padding-top:33px;/* メニューバー分下に下げる */
-	margin:0 auto;
-    height:60px; width:800px;
-    background-color:white;   
-    font-size:60px;
-    font-family: "衡山毛筆フォント行書";
-    text-align:center;
-}/*タイトルの設定*/
-nav{
-    height:25px; width:100vw;/*高さ25px　幅画面いっぱい*/
-    background-color: white;
-    position:fixed;/*画面上で固定  */    
-    top:0px;left:0px;/* 画面左端 */
-}/*メニューバーの設定*/
-nav a.aaa {
-	background-color:#fdf5f5;
-	color:black;
-	display:inline;								
-	float:left;	    
-	width:25%; height: 25px;/*親要素の25％の長さ　25ｐｘの高さ*/
-	text-align:center;
-	text-decoration: none;
-	padding: 8px 0px 0px 0px;
-	}/*メニューバーのボタンの設定*/
-nav a :hover {
-	background-color: #e8ec7c;				
-	}/* メニューバーボタンのマウスON時の設定 */
-
-/* --------------------------↓セクション------------------------------------ */
-section{
-padding-top:33px;
-         width:96vw;
-    height:1000px;
-	    margin:0 auto;		
-
-}
-section#top{
-    background-color: #ffffff;   
-
-}
-section#member{
-    background-image:url('images/skin/_original.jpg');
-    
-}
-section#link{
-    background-color: #ffffff;   
-}
-section#mo{
-	background-image:url('images/skin/CorkBoard02.jpg');
-    
-       
-}
-
-/* ----------------------------------トップページ↓------------------------------------------------ */
-table#schedule{
-				width:96vw; margin:0 auto;				/*100vwにすると多分余白の関係でシークバーが出来るので妥協*/
-				height:300px;
-				padding:0px,15px,15px,15px;
-				background-color:#006400;	
-				color:#FFFFFF;								/* 文字色を変更　*/
-			    border-spacing: 5px;
-			   	border-bottom: solid 5px #deb887;
-			}
-			#schedule caption{
-				font-size: 35px;
-				background-color:#006400;
-			}
-			td{
-			    font-style:oblique;
-			    margin: 40px 40px;
-			   	text-align: center;
-				vertical-align: middle;
-			}
-			.date{
-				width: 15px;
-			}	
-			.clear{
-				clear: both;
-			}
-			
-
-			
-			
-			
-			table#history{
-				width:800px; margin:0 auto;				/*内容全体をセンタリング*/
-			    border-spacing: 5px;
-			}
-			#history caption{
-				caption-side: top; text-align: left;
-			}
-#m2{display: 0none;}
-#2m:checked #m2 {
-    display:block;  
-}
-/* -------------------------リンク（チェックボックスで処理）--------------------------------- */			
-	ul>li>ul>li{
-
-	    display:none;
-	    padding-top:10px;
-	    
-	}
-
-/*  ul>li:hover>ul>li {
-background-color:moccasin;  
-    display:block;  
-}*/
-ul>li:hover{
-    background-color:lightyellow;
-    
-}
-ul{
-
-    
-    background-color:lightblue;
-
-    list-style:none;
-    margin-top:10px;
-    
-}
-ul>li>ul>li:hover{
-background-color:#ffb5c3;  
-}
-#link a,label{
-    display:block; 
-}
-
-input:checked ~ul>li {
-background-color:moccasin;  
-    display:block;  
-}/* インプットがチェックされて 後ろにあるulの子要素li */
-input{
-    display:none;
-    
-}
-/* ----------------------催し--------------------------------- */
-	
-#mo a{
- position:relative;
-
-
-    //float:left;
-    	
-    padding-right:10px;
-}
-#mo a>p{
-   position:absolute;
-    top:-120px;
-    left:25px;
-    color:red;
-    font-size:30px;
-   display:none;
-}
-#mo a:hover>p{
-    display:block;
-    
-}		
-/* ------------------------------ドア----------------------------*/
-#move{
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    top: 0px;
-    left: 0px;
-    transform: skewY(0deg);
- 
-}
-   
-		</style><!--増えてきたらcssファイルにしてください-->
-
-<!--↓　グーグルWEBフォント-->
-<link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Ewert' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <!--↓　グーグルWEBフォント-->
+    <link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ewert' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
 	</head>
+    
 	<body onload="draw()">
 
-		<header id="maintitle">2015年度情報物理研究室</header>
+    <header id="maintitle">2015年度情報物理研究室</header>
 
 	<nav id="menu">
 
@@ -281,13 +94,13 @@ input{
 		<a class="aaa" href="#link" >リンク</a>
 		<a class="aaa" href="#top"  >予定</a>
 		<!-------------------------↓　ドア---------------+-->
-<!--<a href="JavaScript:move()"><img id="move" border="0" src="images/skin/door.gif" alt="イラスト1"></a>-->
+        <!--<a href="JavaScript:move()"><img id="move" border="0" src="images/skin/door.gif" alt="イラスト1"></a>-->
 
-<!-------------------------↓　ドア---------------+-->
+        <!-------------------------↓　ドア---------------+-->
 	</nav>
 
 
-<section id="top">
+    <section id="top">
 
 		<table id="schedule">
 			<caption>Schedule</caption>
@@ -312,6 +125,10 @@ input{
 				<tr><td class="date">5/18</td><td>12:30</td><td>h102</td><td>ランチミーティング（中止）</td></tr>
 				<tr><td class="date">5/19</td><td>12:30</td><td>h102</td><td>ランチミーティング（振り替え）</td></tr>
 				<tr><td class="date">5/22</td><td>18:00</td><td>ゼミ室</td><td>福山大ミーティング</td></tr>
+            
+                <thead><tr><th colspan=4><input type="checkbox" id="6m" /><label for="6m">6月</label></th></tr></thead>
+                <tr><td class="date">6/26</td><td>18:00</td><td>ゼミ室</td><td>福山大ミーティング</td></tr>
+            
 				<thead><tr><th colspan=4><input type="checkbox" id="7m" /><label for="7m">7月</label></th></tr></thead>
 				<tr><td class="date">7/25</td><td>?</td><td>?</td><td>オープンキャンパス</td></tr>	
 				<tr><td class="date">7/26</td><td>?</td><td>?</td><td>オープンキャンパス</td></tr>	
@@ -323,202 +140,166 @@ input{
 			</tbody>
 
 		</table>
-</section>
-<section id="mo">
-
-
-
+    </section>
+    
+    
+    <section id="mo"><!--催し-->
 		<a href="https://acaric.jp/event/pages/201501-webseminar-it/" target="_blank"><p >終了1</p><img border="0" src="images/pdf/20150108-0204_web_seminar.jpg" width="128" height="auto" alt="イラスト1"></a>
-
-
-
-
-
 		<a href="https://acaric.jp/event/pages/201501-webseminar-it/" target="_blank"><p >終了2</p><img border="0" src="images/pdf/20150108-0204_web_seminar.jpg" width="128" height="auto" alt="イラスト1"></a>
 		<a href="00000.jpg" target="_blank"><p >詳細はテクタマ</p><img border="0" src="images/pdf/00000.jpg" width="128" height="auto" alt="イラスト1"></a>
 
+    </section>
+
+    
+    <section id="member">
+        <a href="matsubara/index.html" target="_blank"><canvas id="cv0" width="220" height="316" title="matsubara"></canvas></a>
+        <a href="misawa/index.html" target="_blank"><canvas id="cv1" width="220" height="316" title="三澤拓弥の卒業研究"></canvas></a>
+        <a href="nishi/index.html" target="_blank"><canvas id="cv2" width="220" height="316" title="情報物理研究室　-NISHI-"></canvas></a>
+        <a href="nizato/index.html" target="_blank"><canvas id="cv3" width="220" height="316" title="INDEX"></canvas></a>
+        <a href="okada/" target="_blank"><canvas id="cv4" width="220" height="316" title="okada | Just another WordPress site"></canvas></a>
+        <a href="sone/index.html" target="_blank"><canvas id="cv5" width="220" height="316" title="情報物理研究室　sone"></canvas></a>
+        <a href="toyota/index.html" target="_blank"><canvas id="cv6" width="220" height="316" title="2015年情報物理研究室　豊田晃己のページ"></canvas></a>
+        
+    </section>
+	
+    
+    <section id="link">
+        <ul>
+	       <li ><input type="checkbox" id="1" /><label for="1">情報物理研究室</label>
+            <ul >
+                <li><a href="http://buturi.heteml.jp/student/2015/misawa/test/attendance/index.php" target="blank">2015年度情報物理教室卒研支援ページ</a></li>
+                <li><a href="https://twitter.com/j_b_2015" target="blank">2015年度情報物理教室Twitter</a></li>
+                <li><a href="http://buturi.heteml.jp/student/2014/" target="blank">2014年度情報物理教室</a></li>
+                <li><a href="http://buturi.heteml.jp/student/2013/" target="blank">2013年度情報物理教室</a></li>
+                <li><a href="http://buturi.heteml.jp/student/2012/" target="blank">2012年度情報物理教室</a></li>
+                <li><a href="http://buturi.heteml.jp/student/2011/" target="blank">2011年度情報物理教室</a></li>
+                <li><a href="http://buturi.heteml.jp/js/" target="blank">JavaScript</a></li>
+                <li><a href="http://buturi.heteml.jp/sotuken" target="blank">情報物理研究室</a></li>
+                <li><a href="http://buturi.heteml.jp/buturi" target="blank">物理学（徐）</a></li>
+                <li><a href="http://buturi.heteml.jp" target="blank">科学的教育知：学習と教育を考える足場 </a></li>
+                <li><a href="http://buturi.hiro.kindai.ac.jp/" target="blank">物理教育</a></li>
+                <li><a href="https://webftp.heteml.jp" target="blank">hetemlログイン</a></li>
+                <li><a href="http://www.hiro.kindai.ac.jp/" target="blank">近畿大学工学部</a></li>
+            </ul>
+	       </li>
+
+	       <li ><input type="checkbox" id="2" /><label for="2">IT系ニュース（利用しているものが他に有ればついかしてください）</label>
+            <ul >
+                <li><a href="http://www.atmarkit.co.jp/" target="blank">＠IT</a></li>
+                <li><a href="http://ggsoku.com/" target="blank">GGSOKU - ガジェット速報</a></li>
+                <li><a href="http://blog.livedoor.jp/itsoku/" target="blank">IT速報</a></li>
+                <li><a href="http://gigazine.net/" target="blank">GIGAZINE（ギガジン）</a></li>
+                <li><a href="http://weekly.ascii.jp/" target="blank">週アスPLUS - 週刊アスキーのITニュースサイト</a></li>
+                <li><a href="http://deviceplus.jp/" target="blank">Device Plus : エンジニアライフにプラス1の情報を</a></li>
+                <li><a href="http://coliss.com/" target="blank">コリス | サイト制作に関する最新の情報をご紹介</a></li>
+            </ul>
+	       </li>
+
+           <li ><input type="checkbox" id="3" /><label for="3">IT系（IT系なら何でも追加してください）</label>
+            <ul >
+                <li><a href="http://paiza.hatenablog.com/" target="blank">paiza開発日誌</a></li>
+                <li><a href="https://www.google.com/calendar/embed?src=5udlp7brhcnbuv0mq7t0jcmh04@group.calendar.google.com" target="blank">広島IT勉強会カレンダー(仮) </a></li>
+                <li><a href="https://www.google.com/calendar/embed?src=ZnZpanZvaG05MXVpZnZkOWhyYXRlaGY2NWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="blank">IT 勉強会カレンダー </a></li>
+                <li><a href="https://qiita.com/" target="blank">Qiita - プログラマの技術情報共有サービス </a></li>
+                <li><a href="http://プログラマが知るべき97のこと.com/" target="blank">プログラマが知るべき97のこと</a></li>
+                <li><a href="http://www.ic.is.tohoku.ac.jp/~swk/lecture/yaruodsp/main.html" target="blank">
+    やる夫で学ぶディジタル信号処理</a></li>
+            </ul>
+           </li>
+
+	       <li ><input type="checkbox" id="4" /><label for="4">WEB　IDE（利用してみて使えそうなもを追加してください）</label>
+            <ul >
+                <li><a href="https://paiza.io/?locale=ja-jp" target="blank">paiza.IO</a></li>
+                <li><a href="http://jsdo.it/" target="blank">jsdo.it</a></li>
+                <li><a href="http://www.tutorialspoint.com/codingground.htm" target="blank">CodingGround</a></li>
+                <li><a href="http://runnable.com/" target="blank">Runnable</a></li>
+            </ul>
+	       </li>
+
+	       <li ><input type="checkbox" id="5" /><label for="5">HP作成の時に便利（参考にしたサイト等追加してください）</label>
+            <ul >
+                <li><a href="http://www.htmq.com/index.htm" target="blank">HTMLクイックリファレンス</a></li>
+                <li><a href="http://jsdo.it/" target="blank">jsdo.it</a></li>
+                <li><a href="http://css.uka-p.com/" target="blank">CSSレイアウト実践講座</a></li>
+                <li><a href="http://dotinstall.com/" target="blank">ドットインストール</a></li>
+                <li><a href="http://www.dspt.net/" target="blank">HTMLタグボード</a></li>
+                <li><a href="http://html-linksyuu.com/" target="blank">HTMLリンク集</a></li>
+                <li><a href="http://weboook.blog22.fc2.com/blog-entry-268.html" target="blank">意外と知らない!?CSSセレクタ20個のおさらい</a></li>
+                <li><a href="https://qiita.com/tags" target="blank">Qiita - プログラマの技術情報共有サービス </a></li>
+                <li><a href="http://codepen.io/" target="blank">CodePen  </a></li>
+            </ul>
+	       </li>
+
+	       <li ><input type="checkbox" id="6"/><label for="6">プログラミング勉強（追加してください）</label>
+            <ul >
+                <li><a href="http://dotinstall.com/" target="blank">ドットインストール</a></li>
+                <li><a href="http://prog-8.com/" target="blank">Progate | プログラミングの入門なら、基礎から学べるProgate (プロゲート)</a></li>
+                <li><a href="http://libro.tuyano.com/" target="blank">libro</a></li>
+                <li><a href="http://allabout.co.jp/netpc/" target="blank">AllAbout デジタル</a></li>
+                <li><a href="http://coreblog.org/ats/stuff/minpy_web/" target="blank">Pythonで学ぶWebアプリ開発のABC みんなのPython Webアプリ編 HTML版</a></li>
+                <li><a href="https://progit-ja.github.io/" target="blank">Pro Git 日本語版電子書籍公開サイト</a></li>
+            </ul>
+	       </li>
+
+	       <li ><input type="checkbox" id="7"/><label for="7">職業サイト（追加してください）</label>
+            <ul >
+                <li><a href="http://www.kansyuken.com/" target="blank">関就研｜関西学生就職指導研究会</a></li>
+                <li><a href="https://www.ac-lab.jp/" target="blank">就活ラボ</a></li>
+                <li><a href="http://www.s-walker.net/" target="blank">朝日学情ナビ</a></li>
+                <li><a href="http://dotinstall.com/" target="blank">就職ウォーカーNet</a></li>
+                <li><a href="https://navi16.shukatsu.jp/16/" target="blank">ダイヤモンド就活ナビ</a></li>
+                <li><a href="https://job.nikkei.co.jp/" target="blank">日経就職ナビ</a></li>
+                <li><a href="http://bunnabi.jp/" target="blank">ブンナビ！（文化放送就職ナビ）</a></li>
+                <li><a href="http://job.mynavi.jp/" target="blank">マイナビ</a></li>
+                <li><a href="hhttp://www.rikunabi.com/" target="blank">リクナビ</a></li>
+            </ul>
+	       </li>
 
 
+	       <li ><input type="checkbox" id="8"/><label for="8">フリー素材（追加してください）</label>
+            <ul >
+                <li><a href="http://musmus.main.jp/" target="blank">フリーBGM・音楽素材 MusMus</a></li>
+                <li><a href="http://free-texture.net/" target="blank">フリーテクスチャ素材館</a></li>
+            </ul>
+	       </li>
+        </ul>
 
-
-
-</section>
-
-<section id="member">
-<a href="matsubara/index.html" target="_blank"><canvas id="cv0" width="220" height="316" title="matsubara"></canvas></a>
-<a href="misawa/index.html" target="_blank"><canvas id="cv1" width="220" height="316" title="三澤拓弥の卒業研究"></canvas></a>
-<a href="nishi/index.html" target="_blank"><canvas id="cv2" width="220" height="316" title="情報物理研究室　-NISHI-"></canvas></a>
-<a href="nizato/index.html" target="_blank"><canvas id="cv3" width="220" height="316" title="INDEX"></canvas></a>
-<a href="okada/" target="_blank"><canvas id="cv4" width="220" height="316" title="okada | Just another WordPress site"></canvas></a>
-<a href="sone/index.html" target="_blank"><canvas id="cv5" width="220" height="316" title="情報物理研究室　sone"></canvas></a>
-<a href="toyota/index.html" target="_blank"><canvas id="cv6" width="220" height="316" title="2015年情報物理研究室　豊田晃己のページ"></canvas></a>
-</section>		
-		
-
-
-
-
-
-
-
-
-
-<section id="link">
-
-<ul>
-	<li ><input type="checkbox" id="1" /><label for="1">情報物理研究室</label>
-
-		<ul >
-            <li><a href="http://buturi.heteml.jp/student/2015/misawa/test/attendance/index.php" target="blank">2015年度情報物理教室卒研支援ページ</a></li>
-			<li><a href="https://twitter.com/j_b_2015" target="blank">2015年度情報物理教室Twitter</a></li>
-			<li><a href="http://buturi.heteml.jp/student/2014/" target="blank">2014年度情報物理教室</a></li>
-			<li><a href="http://buturi.heteml.jp/student/2013/" target="blank">2013年度情報物理教室</a></li>
-			<li><a href="http://buturi.heteml.jp/student/2012/" target="blank">2012年度情報物理教室</a></li>
-			<li><a href="http://buturi.heteml.jp/student/2011/" target="blank">2011年度情報物理教室</a></li>
-			<li><a href="http://buturi.heteml.jp/js/" target="blank">JavaScript</a></li>
-			<li><a href="http://buturi.heteml.jp/sotuken" target="blank">情報物理研究室</a></li>
-			<li><a href="http://buturi.heteml.jp/buturi" target="blank">物理学（徐）</a></li>
-			<li><a href="http://buturi.heteml.jp" target="blank">科学的教育知：学習と教育を考える足場 </a></li>
-			<li><a href="http://buturi.hiro.kindai.ac.jp/" target="blank">物理教育</a></li>
-			<li><a href="https://webftp.heteml.jp" target="blank">hetemlログイン</a></li>
-			<li><a href="http://www.hiro.kindai.ac.jp/" target="blank">近畿大学工学部</a></li>
-
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="2" /><label for="2">IT系ニュース（利用しているものが他に有ればついかしてください）</label>
-		<ul >
-			<li><a href="http://www.atmarkit.co.jp/" target="blank">＠IT</a></li>
-			<li><a href="http://ggsoku.com/" target="blank">GGSOKU - ガジェット速報</a></li>
-			<li><a href="http://blog.livedoor.jp/itsoku/" target="blank">IT速報</a></li>
-			<li><a href="http://gigazine.net/" target="blank">GIGAZINE（ギガジン）</a></li>
-			<li><a href="http://weekly.ascii.jp/" target="blank">週アスPLUS - 週刊アスキーのITニュースサイト</a></li>
-			<li><a href="http://deviceplus.jp/" target="blank">Device Plus : エンジニアライフにプラス1の情報を</a></li>
-			<li><a href="http://coliss.com/" target="blank">コリス | サイト制作に関する最新の情報をご紹介</a></li>
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="3" /><label for="3">IT系（IT系なら何でも追加してください）</label>
-		<ul >
-			<li><a href="http://paiza.hatenablog.com/" target="blank">paiza開発日誌</a></li>
-			<li><a href="https://www.google.com/calendar/embed?src=5udlp7brhcnbuv0mq7t0jcmh04@group.calendar.google.com" target="blank">広島IT勉強会カレンダー(仮) </a></li>
-			<li><a href="https://www.google.com/calendar/embed?src=ZnZpanZvaG05MXVpZnZkOWhyYXRlaGY2NWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="blank">IT 勉強会カレンダー </a></li>
-			<li><a href="https://qiita.com/" target="blank">Qiita - プログラマの技術情報共有サービス </a></li>
-			<li><a href="http://プログラマが知るべき97のこと.com/" target="blank">プログラマが知るべき97のこと</a></li>
-			<li><a href="http://www.ic.is.tohoku.ac.jp/~swk/lecture/yaruodsp/main.html" target="blank">
-やる夫で学ぶディジタル信号処理</a></li>
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="4" /><label for="4">WEB　IDE（利用してみて使えそうなもを追加してください）</label>
-		<ul >
-			<li><a href="https://paiza.io/?locale=ja-jp" target="blank">paiza.IO</a></li>
-			<li><a href="http://jsdo.it/" target="blank">jsdo.it</a></li>
-			<li><a href="http://www.tutorialspoint.com/codingground.htm" target="blank">CodingGround</a></li>
-			<li><a href="http://runnable.com/" target="blank">Runnable</a></li>
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="5" /><label for="5">HP作成の時に便利（参考にしたサイト等追加してください）</label>
-		<ul >
-			<li><a href="http://www.htmq.com/index.htm" target="blank">HTMLクイックリファレンス</a></li>
-			<li><a href="http://jsdo.it/" target="blank">jsdo.it</a></li>
-			<li><a href="http://css.uka-p.com/" target="blank">CSSレイアウト実践講座</a></li>
-			<li><a href="http://dotinstall.com/" target="blank">ドットインストール</a></li>
-			<li><a href="http://www.dspt.net/" target="blank">HTMLタグボード</a></li>
-			<li><a href="http://html-linksyuu.com/" target="blank">HTMLリンク集</a></li>
-			<li><a href="http://weboook.blog22.fc2.com/blog-entry-268.html" target="blank">意外と知らない!?CSSセレクタ20個のおさらい</a></li>
-			<li><a href="https://qiita.com/tags" target="blank">Qiita - プログラマの技術情報共有サービス </a></li>
-			<li><a href="http://codepen.io/" target="blank">CodePen  </a></li>
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="6"/><label for="6">プログラミング勉強（追加してください）</label>
-		<ul >
-			<li><a href="http://dotinstall.com/" target="blank">ドットインストール</a></li>
-			<li><a href="http://prog-8.com/" target="blank">Progate | プログラミングの入門なら、基礎から学べるProgate (プロゲート)</a></li>
-			<li><a href="http://libro.tuyano.com/" target="blank">libro</a></li>
-			<li><a href="http://allabout.co.jp/netpc/" target="blank">AllAbout デジタル</a></li>
-			<li><a href="http://coreblog.org/ats/stuff/minpy_web/" target="blank">Pythonで学ぶWebアプリ開発のABC みんなのPython Webアプリ編 HTML版</a></li>
-			<li><a href="https://progit-ja.github.io/" target="blank">Pro Git 日本語版電子書籍公開サイト</a></li>
-		</ul>
-	</li>
-
-	<li ><input type="checkbox" id="7"/><label for="7">職業サイト（追加してください）</label>
-		<ul >
-			<li><a href="http://www.kansyuken.com/" target="blank">関就研｜関西学生就職指導研究会</a></li>
-			<li><a href="https://www.ac-lab.jp/" target="blank">就活ラボ</a></li>
-			<li><a href="http://www.s-walker.net/" target="blank">朝日学情ナビ</a></li>
-			<li><a href="http://dotinstall.com/" target="blank">就職ウォーカーNet</a></li>
-			<li><a href="https://navi16.shukatsu.jp/16/" target="blank">ダイヤモンド就活ナビ</a></li>
-			<li><a href="https://job.nikkei.co.jp/" target="blank">日経就職ナビ</a></li>
-			<li><a href="http://bunnabi.jp/" target="blank">ブンナビ！（文化放送就職ナビ）</a></li>
-			<li><a href="http://job.mynavi.jp/" target="blank">マイナビ</a></li>
-			<li><a href="hhttp://www.rikunabi.com/" target="blank">リクナビ</a></li>
-		</ul>
-	</li>
-
-
-	<li ><input type="checkbox" id="8"/><label for="8">フリー素材（追加してください）</label>
-		<ul >
-			<li><a href="http://musmus.main.jp/" target="blank">フリーBGM・音楽素材 MusMus</a></li>
-			<li><a href="http://free-texture.net/" target="blank">フリーテクスチャ素材館</a></li>
-		</ul>
-	</li>
-</ul>
-
-
-
-
-
-</section>
-<script >
-
-
-
-
-
-function draw(){
-var ctx=[] ; 
+    </section>
     
     
     
-    for(var i=0;i<inko.length;i++){
-//alert(member[i].src);
- 
-        ctx[i] = document.getElementById("cv"+i).getContext("2d");         
-        ctx[i].drawImage(img,0,0,220,316);
+    <script >
+    function draw(){
+        var ctx=[] ; 
 
-        ctx[i].drawImage(member[i],25,70,170,170);
-        ctx[i].font =" 35px 'Mystery Quest'"; 
-        ctx[i].fillText(inko[i], 40, 275);
+        for(var i=0;i<inko.length;i++){
+            //alert(member[i].src);
+            ctx[i] = document.getElementById("cv"+i).getContext("2d");         
+            ctx[i].drawImage(img,0,0,220,316);
 
+            ctx[i].drawImage(member[i],25,70,170,170);
+            ctx[i].font =" 35px 'Mystery Quest'"; 
+            ctx[i].fillText(inko[i], 40, 275);
+        }
     }
-}
 
 
-var rand=["Great Vibes","Ewert","Ribeye Marrow","Amatic SC","Faster One","Fredericka the Great","Stardos Stencil","Geo","UnifrakturMaguntia","Permanent Marker"];//フォントを配列に格納
-var e = document.getElementById("maintitle");//eがID名maintitleを挿すようにする
-e.textContent="2015 SO.Laboratory";//テキストの変更
+    var rand=["Great Vibes","Ewert","Ribeye Marrow","Amatic SC","Faster One","Fredericka the Great","Stardos Stencil","Geo","UnifrakturMaguntia","Permanent Marker"];//フォントを配列に格納
+    var e = document.getElementById("maintitle");//eがID名maintitleを挿すようにする
+    e.textContent="2015 SO.Laboratory";//テキストの変更
 
-function aa(){//aaと言う関数を作る
-var rnd = Math.floor( Math.random() * 10 );//0-9の乱数の発生
-e.style.fontFamily=rand[rnd];
-/*---------------------------------------------------------
-//IDがmaintitleの物のfontofamilyを書き換える
-//発生させた乱数で配列の中からどのフォントを選ぶか決める
----------------------------------------------------------*/
-}
+    function aa(){//aaと言う関数を作る
+        var rnd = Math.floor( Math.random() * 10 );//0-9の乱数の発生
+        e.style.fontFamily=rand[rnd];
+        /*---------------------------------------------------------
+        //IDがmaintitleの物のfontofamilyを書き換える
+        //発生させた乱数で配列の中からどのフォントを選ぶか決める
+        ---------------------------------------------------------*/
+    }
 
-
-draw();
-setInterval("aa()",1234);//1234ミリ秒に一回aaと言う関数を実行する
-
-
-
-
-
-</script>
+    draw();
+    setInterval("aa()",1234);//1234ミリ秒に一回aaと言う関数を実行する
+    </script>
 
 	</body>
 </html>

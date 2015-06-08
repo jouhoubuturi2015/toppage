@@ -1,0 +1,176 @@
+/*---------------------------↓基本設定↓------------------------------*/
+body{background-color:#ffffff;}
+
+@font-face{
+    font-family:衡山毛筆フォント行書;
+    src: url('font.ttf');
+}/* 新しいフォントの作成 */
+header{
+	padding-top:33px;/* メニューバー分下に下げる */
+	margin:0 auto;
+    height:60px; width:800px;
+    background-color:white;   
+    font-size:60px;
+    font-family: "衡山毛筆フォント行書";
+    text-align:center;
+}/*タイトルの設定*/
+nav{
+    height:25px; width:100vw;/*高さ25px　幅画面いっぱい*/
+    background-color: white;
+    position:fixed;/*画面上で固定  */    
+    top:0px;left:0px;/* 画面左端 */
+}/*メニューバーの設定*/
+nav a.aaa {
+	background-color:#fdf5f5;
+	color:black;
+	display:inline;								
+	float:left;	    
+	width:25%; height: 25px;/*親要素の25％の長さ　25ｐｘの高さ*/
+	text-align:center;
+	text-decoration: none;
+	padding: 8px 0px 0px 0px;
+	}/*メニューバーのボタンの設定*/
+nav a :hover {
+	background-color: #e8ec7c;				
+	}/* メニューバーボタンのマウスON時の設定 */
+
+/* --------------------------↓セクション------------------------------------ */
+section{
+padding-top:33px;
+         width:96vw;
+    height:1000px;
+	    margin:0 auto;		
+
+}
+section#top{
+    background-color: #ffffff;   
+
+}
+section#member{
+    background-image:url('images/skin/_original.jpg');
+    
+}
+section#link{
+    background-color: #ffffff;   
+}
+section#mo{
+	background-image:url('images/skin/CorkBoard02.jpg');
+    
+       
+}
+
+/* ----------------------------------トップページ↓------------------------------------------------ */
+table#schedule{
+				width:96vw; margin:0 auto;				/*100vwにすると多分余白の関係でシークバーが出来るので妥協*/
+				height:300px;
+				padding:0px,15px,15px,15px;
+				background-color:#006400;	
+				color:#FFFFFF;								/* 文字色を変更　*/
+			    border-spacing: 5px;
+			   	border-bottom: solid 5px #deb887;
+			}
+			#schedule caption{
+				font-size: 35px;
+				background-color:#006400;
+			}
+			td{
+			    font-style:oblique;
+			    margin: 40px 40px;
+			   	text-align: center;
+				vertical-align: middle;
+			}
+			.date{
+				width: 15px;
+			}	
+			.clear{
+				clear: both;
+			}
+			
+
+			
+			
+			
+			table#history{
+				width:800px; margin:0 auto;				/*内容全体をセンタリング*/
+			    border-spacing: 5px;
+			}
+			#history caption{
+				caption-side: top; text-align: left;
+			}
+#m2{display: 0none;}
+#2m:checked #m2 {
+    display:block;  
+}
+/* -------------------------リンク（チェックボックスで処理）--------------------------------- */			
+	ul>li>ul>li{
+
+	    display:none;
+	    padding-top:10px;
+	    
+	}
+
+/*  ul>li:hover>ul>li {
+background-color:moccasin;  
+    display:block;  
+}*/
+ul>li:hover{
+    background-color:lightyellow;
+    
+}
+ul{
+
+    
+    background-color:lightblue;
+
+    list-style:none;
+    margin-top:10px;
+    
+}
+ul>li>ul>li:hover{
+background-color:#ffb5c3;  
+}
+#link a,label{
+    display:block; 
+}
+
+input:checked ~ul>li {
+background-color:moccasin;  
+    display:block;  
+}/* インプットがチェックされて 後ろにあるulの子要素li */
+input{
+    display:none;
+    
+}
+/* ----------------------催し--------------------------------- */
+	
+#mo a{
+ position:relative;
+
+
+    //float:left;
+    	
+    padding-right:10px;
+}
+#mo a>p{
+   position:absolute;
+    top:-120px;
+    left:25px;
+    color:red;
+    font-size:30px;
+   display:none;
+}
+#mo a:hover>p{
+    display:block;
+    
+}		
+/* ------------------------------ドア----------------------------*/
+#move{
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    top: 0px;
+    left: 0px;
+    transform: skewY(0deg);
+ 
+}
+   
