@@ -36,10 +36,10 @@ nav a :hover {
 
 /* --------------------------↓セクション------------------------------------ */
 section{
-padding-top:33px;
-         width:96vw;
+    padding-top:33px;
+    width:96vw;
     height:1000px;
-	    margin:0 auto;		
+    margin:0 auto;		
 
 }
 section#top{
@@ -61,56 +61,51 @@ section#mo{
 
 /* ----------------------------------トップページ↓------------------------------------------------ */
 table#schedule{
-				width:96vw; margin:0 auto;				/*100vwにすると多分余白の関係でシークバーが出来るので妥協*/
-				height:300px;
-				padding:0px,15px,15px,15px;
-				background-color:#006400;	
-				color:#FFFFFF;								/* 文字色を変更　*/
-			    border-spacing: 5px;
-			   	border-bottom: solid 5px #deb887;
-			}
-			#schedule caption{
-				font-size: 35px;
-				background-color:#006400;
-			}
-			td{
-			    font-style:oblique;
-			    margin: 40px 40px;
-			   	text-align: center;
-				vertical-align: middle;
-			}
-			.date{
-				width: 15px;
-			}	
-			.clear{
-				clear: both;
-			}
-			
-
-			
-			
-			
-			table#history{
-				width:800px; margin:0 auto;				/*内容全体をセンタリング*/
-			    border-spacing: 5px;
-			}
-			#history caption{
-				caption-side: top; text-align: left;
-			}
-#m2{display: 0none;}
+    width:96vw; margin:0 auto;				/*100vwにすると多分余白の関係でシークバーが出来るので妥協*/
+    height:300px;
+    padding:0px,15px,15px,15px;
+    background-color:#006400;	
+    color:#FFFFFF;								/* 文字色を変更　*/
+    border-spacing: 5px;
+    border-bottom: solid 5px #deb887;
+}
+#schedule caption{
+    font-size: 35px;
+    background-color:#006400;
+}
+td{
+    font-style:oblique;
+    margin: 40px 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+.date{
+    width: 15px;
+}
+.clear{
+    clear: both;
+}
+table#history{
+    width:800px; margin:0 auto;				/*内容全体をセンタリング*/
+    border-spacing: 5px;
+}
+#history caption{
+    caption-side: top; text-align: left;
+}
+#m2{
+    display: 0none;
+}
 #2m:checked #m2 {
-    display:block;  
+    display:block;
 }
 /* -------------------------リンク（チェックボックスで処理）--------------------------------- */			
-	ul>li>ul>li{
-
-	    display:none;
-	    padding-top:10px;
+ul>li>ul>li{
+    display:none;
+    padding-top:10px;
 	    
-	}
-
+}
 /*  ul>li:hover>ul>li {
-background-color:moccasin;  
+    background-color:moccasin;  
     display:block;  
 }*/
 ul>li:hover{
@@ -118,23 +113,20 @@ ul>li:hover{
     
 }
 ul{
-
-    
     background-color:lightblue;
-
     list-style:none;
     margin-top:10px;
     
 }
 ul>li>ul>li:hover{
-background-color:#ffb5c3;  
+    background-color:#ffb5c3;  
 }
 #link a,label{
     display:block; 
 }
 
 input:checked ~ul>li {
-background-color:moccasin;  
+    background-color:moccasin;  
     display:block;  
 }/* インプットがチェックされて 後ろにあるulの子要素li */
 input{
@@ -144,25 +136,24 @@ input{
 /* ----------------------催し--------------------------------- */
 	
 #mo a{
- position:relative;
-
+    position:relative;
 
     //float:left;
     	
     padding-right:10px;
 }
 #mo a>p{
-   position:absolute;
+    position:absolute;
     top:-120px;
     left:25px;
     color:red;
     font-size:30px;
-   display:none;
+    display:none;
 }
 #mo a:hover>p{
     display:block;
     
-}		
+}
 /* ------------------------------ドア----------------------------*/
 #move{
     position: absolute;
