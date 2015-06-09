@@ -5,28 +5,10 @@
 		<title>2015年度情報物理研究室</title>
         <link rel="shortcut icon" href="images/profile/favi.gif">
         <link rel="stylesheet" href="base.css">
-
-    <script src="top_head.js"></script>
+        <!--<link rel="stylesheet" href="style/scrollpath.css" />-->
     
-        
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        
-    <link rel="stylesheet" type="text/css" href="style/scrollpath.css" />
-        
-    <script type="text/javascript">
-    $(function(){
-        $('a[href^=#]').click(function(){
-            var speed = 800;
-            var href= $(this).attr("href");
-            var target = $(href == "#" || href == "" ? 'html' : href);
-            var position = target.offset().top;
-            $("html, body").animate({scrollTop:position}, speed, "swing");
-            return false;
-        });
-    });
-    </script>
-
-		
+    <script src="top_head.js"></script>
 
     <!--↓　グーグルWEBフォント-->
     <link href='http://fonts.googleapis.com/css?family=Mystery+Quest' rel='stylesheet' type='text/css'>
@@ -238,41 +220,8 @@
 
     </section>
     
+    <script src="top_bodylast.js"></script>
     
-    
-    <script >
-    function draw(){
-        var ctx=[] ; 
-
-        for(var i=0;i<inko.length;i++){
-            //alert(member[i].src);
-            ctx[i] = document.getElementById("cv"+i).getContext("2d");         
-            ctx[i].drawImage(img,0,0,220,316);
-
-            ctx[i].drawImage(member[i],25,70,170,170);
-            ctx[i].font =" 35px 'Mystery Quest'"; 
-            ctx[i].fillText(inko[i], 40, 275);
-        }
-    }
-
-
-    var rand=["Great Vibes","Ewert","Ribeye Marrow","Amatic SC","Faster One","Fredericka the Great","Stardos Stencil","Geo","UnifrakturMaguntia","Permanent Marker"];//フォントを配列に格納
-    var e = document.getElementById("maintitle");//eがID名maintitleを挿すようにする
-    e.textContent="2015 SO.Laboratory";//テキストの変更
-
-    function aa(){//aaと言う関数を作る
-        var rnd = Math.floor( Math.random() * 10 );//0-9の乱数の発生
-        e.style.fontFamily=rand[rnd];
-        /*---------------------------------------------------------
-        //IDがmaintitleの物のfontofamilyを書き換える
-        //発生させた乱数で配列の中からどのフォントを選ぶか決める
-        ---------------------------------------------------------*/
-    }
-
-    draw();
-    setInterval("aa()",1234);//1234ミリ秒に一回aaと言う関数を実行する
-    </script>
-
 	</body>
 </html>
 <!--12/02作成開始　自由に編集してください-->
